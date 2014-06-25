@@ -22,7 +22,21 @@ SECRET_KEY = 'w%zq%y!7*0-^9tzwn$56c45i^_o_k2^g1h(p2nv5&2tj)z@44u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__name__))
+
+TEMPLATE_DIRS = (
+    os.path.join(PROJECT_ROOT, 'support/templates/'),
+)
+
 TEMPLATE_DEBUG = True
+
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+
+MEDIA_URL = '/media/'
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+
+STATIC_URL = '/static/'
 
 ALLOWED_HOSTS = []
 

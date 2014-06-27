@@ -39,3 +39,5 @@ OPTIONAL:
    a. Note: This script assumes a user with username "admin" and password "password" to populate data.
 
 11. Run tests with "python manage.py test"
+
+12. Check out the /users and /battles views to see all profiles and all battles

@@ -16,7 +16,7 @@ Quick start
 4. Install contained package with "python setup.py install"
 
 5. Run the below commands to create a certificate for HTTPS/SSL support
-   a. Note: Please install openssl first if it is not already installed on your machine
+  a. Note: Please install openssl first if it is not already installed on your machine
 
 openssl genrsa -out kixeye.key 2048
 

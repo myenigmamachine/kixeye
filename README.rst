@@ -25,7 +25,7 @@ openssl x509 -req -days 365 -in kixeye.csr -signkey kixeye.key -out kixeye.crt
 6. Sync database with "python manage.py syncdb"
   a. Recommended: Create an admin user for testing 
 
-7. Run `uwsgi --master --https 0.0.0.0:8000,kixeye.crt,kixeye.key --post-buffering 1 --wsgi-file kixeye/wsgi.py` to run the app.
+7. Run "uwsgi --master --https 0.0.0.0:8000,kixeye.crt,kixeye.key --post-buffering 1 --wsgi-file kixeye/wsgi.py" to run the app.
 
 8. visit https://localhost:8000/admin/ to create a user (you'll need the Admin app enabled).
 

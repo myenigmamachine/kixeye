@@ -1,0 +1,5 @@
+include LICENSE
+include README.rst
+recursive-include kixeye *
+recursive-include support/static *
+recursive-include support/templates *

@@ -1,0 +1,7 @@
+Django==1.6.5
+distribute==0.6.10
+djangorestframework==2.3.14
+python-dateutil==2.2
+six==1.7.2
+uWSGI==2.0.5.1
+wsgiref==0.1.2

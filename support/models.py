@@ -1,33 +1,30 @@
+import logging
+
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractBaseUser
 
 
-class ProfileManager(models.Manager):
-    def create_profile(self, nick_name,
-                       first_name,
-                       last_name,
-                       wins,
-                       losses,
-                       win_streak,
-                       created,
-                       last_seen):
-        profile = self.create(username=nick_name,
-                              first_name = first_name,
-                              last_name = last_name,
-                              wins = wins,
-                              losses = losses,
-                              win_streak = win_streak,
-                              created = created,
-                              last_seen = last_seen,)
-
-class Profile(User):
-    objects = ProfileManager()
-    nick_name = models.CharField(max_length=255)
-    wins = models.IntegerField()
-    losses = models.IntegerField()
-    win_streak = models.IntegerField()
+class Profile(AbstractBaseUser):
+    nickname = models.CharField(max_length=255, default='')
+    first = models.CharField(max_length=255, default='')
+    last = models.CharField(max_length=255, default='')
+    wins = models.IntegerField(default=0)
+    losses = models.IntegerField(default=0)
+    win_streak = models.IntegerField(default=0)
     created = models.DateTimeField(auto_now_add=True)
     last_seen = models.DateTimeField(auto_now_add=True)
 
+    USERNAME_FIELD = 'nickname'
+
     class Meta:
         db_table = "support_profile"
+
+
+class Battle(models.Model):
+    attacker = models.IntegerField(default=0)
+    defender = models.IntegerField(default=0)
+    winner = models.IntegerField(default=0)
+    start = models.DateTimeField()
+    end = models.DateTimeField()
+    class Meta:
+        db_table = "support_battle"

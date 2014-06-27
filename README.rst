@@ -19,7 +19,9 @@ Quick start
    a. Note: Please install openssl first if it is not already installed on your machine
 
 openssl genrsa -out kixeye.key 2048
+
 openssl req -new -key kixeye.key -out kixeye.csr
+
 openssl x509 -req -days 365 -in kixeye.csr -signkey kixeye.key -out kixeye.crt
 
 6. Sync database with "python manage.py syncdb"
